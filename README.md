@@ -31,10 +31,11 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 
 1. **Zero Unauthorized Dependencies**: The AI must NEVER run `npm install`, `pub add`, or add third-party dependencies to Gradle, Cocoapods, SPM, or ohpm without explicit user permission.
 2. **Design Token & Component First**: Mandates scanning and reusing existing project Theme Tokens, colors, typography, spacing, and reusable components. Hardcoding raw hex colors or duplicate primitives is strictly prohibited.
-3. **Cross-Platform & Contract Alignment**: Respect project contract and parity rules across Android, iOS, and HarmonyOS. Document cross-platform sync requirements when modifying features.
+3. **Feature Contracts & Cross-Platform Parity**: Align with project-specific rules, acceptance criteria, and **Feature Contract / Parity Records**. In multi-platform ecosystems (Android + iOS + HarmonyOS), deliver parity across companion platforms in sync rather than isolated silos.
 4. **Platform-Accurate Touch Targets & Safe Area**:
    - Android (Material): minimum **48x48 dp**
    - iOS (SwiftUI): minimum **44x44 pt**
+   - HarmonyOS (ArkUI): minimum **48x48 vp** (verify target SDK & device profile, e.g. Phone/Tablet/2-in-1)
    - Web: minimum **44x44 px**
    - Respect Safe Area Insets (notches, dynamic island, status bars). Do not hardcode device dimensions.
 5. **No Synthetic Mock Data**: DO NOT invent arbitrary data models or mock states without agreed fixtures or schema contracts.
@@ -98,10 +99,11 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 
 1. **ຫ້າມລົງ Package ເອງ (Zero Unauthorized Dependencies)**: ຫ້າມບໍ່ໃຫ້ AI ແອບລັນ `npm install`, `pub add`, ຫຼື ເພີ່ມ dependency ໃນ Gradle, Cocoapods, SPM, ohpm ເດັດຂາດໂດຍບໍ່ໄດ້ຮັບອະນຸຍາດ.
 2. **ນຳໃຊ້ Theme Tokens & Components ເດີມກ່ອນສະເໝີ**: ບັງຄັບໃຫ້ກວດສອບ ແລະ ດຶງເອົາ Theme Tokens, ສີ, ຂະໜາດຕົວໜັງສື, ໄລຍະຫ່າງ (Spacing) ແລະ Components ທີ່ມີຢູ່ແລ້ວໃນໂປຣເຈັກມາໃຊ້ຄືນ.
-3. **ຄຳນຶງເຖິງ Parity ຂ້າມ Platform**: ຮອງຮັບໂປຣເຈັກໃຫຍ່ທີ່ຕ້ອງເຮັດທັງ Android, iOS ແລະ HarmonyOS ໃຫ້ສອດຄ່ອງກັບ Data Contract ແລະ ບັນທຶກ Parity ສະເໝີ.
+3. **ປະຕິບັດຕາມ Feature Contract & Parity ຂ້າມ Platform**: ຮອງຮັບໂປຣເຈັກໃຫຍ່ທີ່ຕ້ອງເຮັດທັງ Android, iOS ແລະ HarmonyOS ໃຫ້ສອດຄ່ອງກັບ Feature Contract / Parity Record ແລະ ສົ່ງມອບວຽກພ້ອມກັນຢ່າງເປັນລະບົບ.
 4. **ຂະໜາດ Touch Target ຖືກຕ້ອງຕາມ Platform & Safe Area**:
    - Android (Material): ຢ່າງໜ້ອຍ **48x48 dp**
    - iOS (SwiftUI): ຢ່າງໜ້ອຍ **44x44 pt**
+   - HarmonyOS (ArkUI): ຢ່າງໜ້ອຍ **48x48 vp** (ກວດສອບຕາມ Target SDK & Device Profile)
    - Web: ຢ່າງໜ້ອຍ **44x44 px**
    - ເຄົາລົບ Safe Area (ຮອຍບາກ, Dynamic Island, ແຖບສະຖານະ) ຫ້າມໃສ່ຂະໜາດ fixed ຕາມຮູບ screenshot.
 5. **ຫ້າມສ້າງ Mock Data ຂຶ້ນມາເອງ**: ຫ້າມສ້າງ model ຫຼື ຂໍ້ມູນສົມມຸດຂຶ້ນມາເອງໂດຍບໍ່ມີ fixture ຫຼື contract ທີ່ຕົກລົງກັນໄວ້.
