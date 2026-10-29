@@ -7,7 +7,11 @@
 <a name="english"></a>
 ## 🇬🇧 English
 
-A **Universal, Production-Grade AI Agent Skill** designed for high-fidelity, zero-regression implementation or adjustment of UI screens and components from visual references (Screenshots, Figma, Mockups) across **any modern framework** (React, Next.js, Vue, Flutter, SwiftUI, Jetpack Compose, Angular, Svelte, HTML/Tailwind).
+A **Universal, Production-Grade AI Agent Skill** designed for high-fidelity implementation or adjustment of UI screens and components from visual references (Screenshots, Figma, Mockups) across modern platforms:
+- **Android**: Jetpack Compose (Kotlin)
+- **iOS**: SwiftUI / UIKit (Swift)
+- **HarmonyOS**: ArkTS / ArkUI
+- **Cross-Platform & Web**: Flutter, React, Next.js, Vue, Tailwind CSS, Svelte, HTML5
 
 Compatible with **all AI Coding Assistants**: Codex, Claude Code, Cursor, Windsurf, Antigravity, GitHub Copilot, and ChatGPT.
 
@@ -25,22 +29,26 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 
 ### 🛡️ Non-Negotiable Guardrails (Zero Loopholes)
 
-1. **Zero Unauthorized Dependencies**: The AI must NEVER run `npm install`, `pub add`, or add third-party dependencies without explicit user permission.
+1. **Zero Unauthorized Dependencies**: The AI must NEVER run `npm install`, `pub add`, or add third-party dependencies to Gradle, Cocoapods, SPM, or ohpm without explicit user permission.
 2. **Design Token & Component First**: Mandates scanning and reusing existing project Theme Tokens, colors, typography, spacing, and reusable components. Hardcoding raw hex colors or duplicate primitives is strictly prohibited.
-3. **Strict Scope Isolation**: Modify ONLY target screens or components. Never refactor unrelated screens, global stores, or run full-repo formatters that pollute Git diffs.
-4. **Responsive & Safe Area Integrity**: Do NOT hardcode fixed dimensions (e.g. `375px x 812px`) based on the screenshot device. Enforce responsive layout and respect Safe Area Insets (notches, status bars).
-5. **State & Contract Completeness**: Account for core UI states (Loaded, Empty, Loading, Error). Do not alter backend data contracts or API schemas unilaterally.
-6. **Honest Verification**: Run appropriate typechecks or builds. If the environment prevents execution, report `Build/Test: NOT RUN` with the exact reason.
+3. **Cross-Platform & Contract Alignment**: Respect project contract and parity rules across Android, iOS, and HarmonyOS. Document cross-platform sync requirements when modifying features.
+4. **Platform-Accurate Touch Targets & Safe Area**:
+   - Android (Material): minimum **48x48 dp**
+   - iOS (SwiftUI): minimum **44x44 pt**
+   - Web: minimum **44x44 px**
+   - Respect Safe Area Insets (notches, dynamic island, status bars). Do not hardcode device dimensions.
+5. **No Synthetic Mock Data**: DO NOT invent arbitrary data models or mock states without agreed fixtures or schema contracts.
+6. **Honest Verification (No Hype)**: Run appropriate typechecks or builds. Never claim "pixel-perfect" or "zero regression" without real verification. If environment restricts execution, report `Build/Test: NOT RUN` with the exact reason.
 
 ### 📋 6-Phase Mandatory Workflow
 
 ```mermaid
 flowchart TD
-    A["Phase 1: Stack Reconnaissance\n(Detect Framework, Tokens, Components)"] --> B["Phase 2: Visual Deconstruction\n(Grid, Hierarchy, Typography, Colors)"]
-    B --> C["Phase 3: Minimal Surgical Plan\n(Identify targets & reused tokens)"]
-    C --> D["Phase 4: Implementation\n(Token-first, Responsive, Accessible)"]
-    D --> E["Phase 5: Verification & Diff Audit\n(Typecheck / Build & git diff check)"]
-    E --> F["Phase 6: Final Verification Report\n(Report files, tokens, build & deviations)"]
+    A["Phase 1: Stack & Parity Reconnaissance\n(Detect Platform, Tokens, Contracts)"] --> B["Phase 2: Visual Deconstruction\n(Grid, Hierarchy, Typography, Surfaces)"]
+    B --> C["Phase 3: Minimal Surgical Plan\n(Identify targets, fixtures & reused tokens)"]
+    C --> D["Phase 4: Implementation\n(Token-first, Platform targets: 48dp/44pt)"]
+    D --> E["Phase 5: Verification & Diff Audit\n(Compile/Build & git diff check)"]
+    E --> F["Phase 6: Final Verification Report\n(Report files, tokens, parity notes & deviations)"]
 ```
 
 ### 🚀 Usage in AI Agents (Prompt Template)
@@ -49,14 +57,14 @@ In your AI Agent (e.g. Codex, Cursor, Claude Code), prompt with your screenshot 
 
 ```text
 Use the $screenshot-to-code skill.
-Implement or adjust the [Target Screen Name, e.g. CheckoutScreen / ProfileView] based on the attached screenshot/Figma.
+Implement or adjust the [Target Screen Name, e.g. WalletScreen / CheckoutView] based on the attached screenshot/Figma.
 
 Requirements:
 - Auto-detect and strictly adhere to the project's existing framework and styling conventions.
-- Match layout, typography, colors, borders, and spacing from the reference.
-- Inspect and reuse existing design system components and theme tokens.
-- Do NOT install unauthorized packages.
-- Modify only the required files.
+- Align with existing design system components, theme tokens, and data contracts.
+- Respect platform touch target standards (48dp for Android, 44pt for iOS).
+- Do NOT install unauthorized packages or invent synthetic mock data.
+- Modify only the required files and record cross-platform parity notes if applicable.
 - Run typecheck/build if possible, or report NOT RUN with reason.
 - Provide a summary of files modified, reused tokens, and any visual discrepancies.
 ```
@@ -66,7 +74,11 @@ Requirements:
 <a name="ພາສາລາວ"></a>
 ## 🇱🇦 ພາສາລາວ (Lao)
 
-ສະກິວ AI Agent ລະດັບ **Production ແບບສາກົນ (Universal)** ທີ່ຖືກອອກແບບມາເພື່ອສ້າງ ຫຼື ປັບແຕ່ງໜ້າຈໍ ແລະ Component ຂອງ UI ຈາກຮູບພາບ (Screenshot, Figma, Mockups) ໃຫ້ກົງກັບຕົ້ນສະບັບຢ່າງຖືກຕ້ອງ ແລະ ບໍ່ກະທົບໂຄງສ້າງເດີມ ຮອງຮັບ**ທຸກໆ Framework ທັນສະໄໝ** (React, Next.js, Vue, Flutter, SwiftUI, Jetpack Compose, Angular, Svelte, HTML/Tailwind).
+ສະກິວ AI Agent ລະດັບ **Production ແບບສາກົນ (Universal)** ທີ່ຖືກອອກແບບມາເພື່ອສ້າງ ຫຼື ປັບແຕ່ງໜ້າຈໍ ແລະ Component ຂອງ UI ຈາກຮູບພາບ (Screenshot, Figma, Mockups) ໃຫ້ກົງກັບຕົ້ນສະບັບຢ່າງຖືກຕ້ອງ ພ້ອມທັງຮັກສາໂຄງສ້າງ ແລະ Design System ເດີມຂອງໂປຣເຈັກ ຮອງຮັບທຸກ Platform:
+- **Android**: Jetpack Compose (Kotlin)
+- **iOS**: SwiftUI / UIKit (Swift)
+- **HarmonyOS**: ArkTS / ArkUI
+- **Cross-Platform & Web**: Flutter, React, Next.js, Vue, Tailwind CSS, Svelte, HTML5
 
 ຮອງຮັບການໃຊ້ງານຮ່ວມກັບ **AI Coding Assistants ທຸກໂຕ**: Codex, Claude Code, Cursor, Windsurf, Antigravity, GitHub Copilot, ແລະ ChatGPT.
 
@@ -84,36 +96,38 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 
 ### 🛡️ ປິດທຸກຊ່ອງວ່າງດ້ວຍກົດເຫຼັກ (Non-Negotiable Guardrails)
 
-1. **ຫ້າມລົງ Package ເອງ (Zero Unauthorized Dependencies)**: ຫ້າມບໍ່ໃຫ້ AI ແອບລັນ `npm install`, `pub add`, ຫຼື ເພີ່ມ dependency ພາຍນອກເອງໂດຍບໍ່ໄດ້ຮັບອະນຸຍາດເດັດຂາດ.
-2. **ນຳໃຊ້ Theme Tokens & Components ເດີມກ່ອນສະເໝີ**: ບັງຄັບໃຫ້ກວດສອບ ແລະ ດຶງເອົາ Theme Tokens, ສີ, ຂະໜາດຕົວໜັງສື, ໄລຍະຫ່າງ (Spacing) ແລະ Components ທີ່ມີຢູ່ແລ້ວໃນໂປຣເຈັກມາໃຊ້ຄືນ ຫ້າມ hardcode ສີ ຫຼື ສ້າງ component ຊ້ຳຊ້ອນ.
-3. **ຈຳກັດຂອບເຂດຢ່າງເຄັ່ງຄັດ (Strict Scope Isolation)**: ແກ້ໄຂສະເພາະໜ້າຈໍ ຫຼື Component ທີ່ລະບຸເທົ່ານັ້ນ ບໍ່ແກ້ໄຂໜ້າຈໍອື່ນ, ບໍ່ແຕະ State ສ່ວນກາງ, ແລະ ບໍ່ລັນ format ທັງໂປຣເຈັກຈົນ Git Diff ປ່ຽນແປງເກີນຄວາມຈຳເປັນ.
-4. **ຮອງຮັບ Responsive ແລະ Safe Area**: ຫ້າມໃສ່ຂະໜາດແບບຕາຍໂຕ (Fixed width/height) ຕາມຂະໜາດໜ້າຈໍໃນຮູບ ຕ້ອງຮອງຮັບ Responsive ແລະ ເຄົາລົບ Safe Area (ຮອຍບາກ, ແຖບສະຖານະ).
-5. **ຮອງຮັບ State ຢ່າງຄົບຖ້ວນ**: ຮອງຮັບ State ພື້ນຖານ (Loaded, Empty, Loading, Error) ແລະ ຫ້າມປ່ຽນແປງ Data Contract ຫຼື API ຫຼັກໂດຍພະການ.
-6. **ລາຍງານຜົນຕາມຄວາມຈິງ**: ລັນ Typecheck ຫຼື Build ຕາມ Framework ຫາກສະພາບແວດລ້ອມບໍ່ເອື້ອອຳນວຍໃຫ້ລັນ ຕ້ອງລາຍງານວ່າ `Build/Test: NOT RUN` ພ້ອມເຫດຜົນຕົວຈິງ.
+1. **ຫ້າມລົງ Package ເອງ (Zero Unauthorized Dependencies)**: ຫ້າມບໍ່ໃຫ້ AI ແອບລັນ `npm install`, `pub add`, ຫຼື ເພີ່ມ dependency ໃນ Gradle, Cocoapods, SPM, ohpm ເດັດຂາດໂດຍບໍ່ໄດ້ຮັບອະນຸຍາດ.
+2. **ນຳໃຊ້ Theme Tokens & Components ເດີມກ່ອນສະເໝີ**: ບັງຄັບໃຫ້ກວດສອບ ແລະ ດຶງເອົາ Theme Tokens, ສີ, ຂະໜາດຕົວໜັງສື, ໄລຍະຫ່າງ (Spacing) ແລະ Components ທີ່ມີຢູ່ແລ້ວໃນໂປຣເຈັກມາໃຊ້ຄືນ.
+3. **ຄຳນຶງເຖິງ Parity ຂ້າມ Platform**: ຮອງຮັບໂປຣເຈັກໃຫຍ່ທີ່ຕ້ອງເຮັດທັງ Android, iOS ແລະ HarmonyOS ໃຫ້ສອດຄ່ອງກັບ Data Contract ແລະ ບັນທຶກ Parity ສະເໝີ.
+4. **ຂະໜາດ Touch Target ຖືກຕ້ອງຕາມ Platform & Safe Area**:
+   - Android (Material): ຢ່າງໜ້ອຍ **48x48 dp**
+   - iOS (SwiftUI): ຢ່າງໜ້ອຍ **44x44 pt**
+   - Web: ຢ່າງໜ້ອຍ **44x44 px**
+   - ເຄົາລົບ Safe Area (ຮອຍບາກ, Dynamic Island, ແຖບສະຖານະ) ຫ້າມໃສ່ຂະໜາດ fixed ຕາມຮູບ screenshot.
+5. **ຫ້າມສ້າງ Mock Data ຂຶ້ນມາເອງ**: ຫ້າມສ້າງ model ຫຼື ຂໍ້ມູນສົມມຸດຂຶ້ນມາເອງໂດຍບໍ່ມີ fixture ຫຼື contract ທີ່ຕົກລົງກັນໄວ້.
+6. **ລາຍງານຜົນຕາມຄວາມຈິງ (ຫ້າມໂຄສະນາເກີນຈິງ)**: ຫ້າມອ້າງວ່າ "pixel-perfect" ຫຼື "zero regression" ຖ້າບໍ່ໄດ້ render ກວດສອບຕົວຈິງ. ຫາກສະພາບແວດລ້ອມລັນ Build/Test ບໍ່ໄດ້ ຕ້ອງລາຍງານວ່າ `Build/Test: NOT RUN` ພ້ອມເຫດຜົນ.
 
 ### 📋 ຂັ້ນຕອນການເຮັດວຽກ 6 ໄລຍະ (6-Phase Workflow)
 
-1. **Phase 1: ສຳຫຼວດ Stack ແລະ ໂຄງສ້າງ**: ກວດສອບ Framework, Styling, Theme Tokens, Component Library ແລະ ລະບົບ Routing.
-2. **Phase 2: ວິເຄາະຮູບພາບອ້າງອິງ**: ແຍກໂຄງສ້າງ Layout, Grid, Typography, ສີ ແລະ Component ຕ່າງໆ.
-3. **Phase 3: ວາງແຜນແບບເຈາະຈົງ**: ກຳນົດໄຟລ໌ທີ່ຕ້ອງແກ້ໄຂ ແລະ Components ທີ່ຕ້ອງດຶງມາໃຊ້ຄືນກ່ອນລົງມືຂຽນ.
-4. **Phase 4: ລົງມືຂຽນໂຄ້ດ**: ປະກອບ Layout ດ້ວຍ Semantic Containers, ໃຊ້ Theme Tokens ແລະ ຄຳນຶງເຖິງ Responsive ແລະ Accessibility.
-5. **Phase 5: ກວດສອບ Build ແລະ Git Diff**: ລັນ Typecheck/Build ແລະ ກວດສອບ `git diff` ເພື່ອຢືນຢັນວ່າບໍ່ມີໄຟລ໌ອື່ນຖືກກະທົບ.
-6. **Phase 6: ລາຍງານຜົນສະຫຼຸບ**: ສະຫຼຸບໄຟລ໌ທີ່ປ່ຽນແປງ, Tokens ທີ່ນຳມາໃຊ້, ຜົນການ Build/Test ແລະ ຈຸດທີ່ຍັງແຕກຕ່າງຈາກຮູບ (ຖ້າມີ).
+1. **Phase 1: ສຳຫຼວດ Platform, Stack ແລະ Contract**: ກວດສອບ Platform (Compose/SwiftUI/ArkTS), Styling, Tokens, Component Library ແລະ API Contracts.
+2. **Phase 2: ວິເຄາະຮູບພາບອ້າງອິງ**: ແຍກໂຄງສ້າງ Layout, Grid, Typography, ສີ ແລະ Interactive Components.
+3. **Phase 3: ວາງແຜນແບບເຈາະຈົງ**: ກຳນົດໄຟລ໌ທີ່ຕ້ອງແກ້ໄຂ, Fixtures ຂໍ້ມູນ ແລະ Components ທີ່ຕ້ອງດຶງມາໃຊ້ຄືນ.
+4. **Phase 4: ລົງມືຂຽນໂຄ້ດ**: ປະກອບ Layout ດ້ວຍ Semantic Containers, ໃຊ້ Theme Tokens ແລະ ໃຊ້ Touch Target ຖືກຕາມ Platform (48dp/44pt).
+5. **Phase 5: ກວດສອບ Build ແລະ Git Diff**: ລັນ Typecheck/Build ຕາມ Platform ແລະ ກວດສອບ `git diff` ເພື່ອຢືນຢັນວ່າບໍ່ມີໄຟລ໌ອື່ນຖືກກະທົບ.
+6. **Phase 6: ລາຍງານຜົນສະຫຼຸບ**: ສະຫຼຸບໄຟລ໌ທີ່ປ່ຽນແປງ, Tokens ທີ່ນຳໃຊ້, ຂໍ້ສັງເກດ Parity ຂ້າມ Platform, ແລະ ຜົນການ Build/Test ຕົວຈິງ.
 
 ### 🚀 ຕົວຢ່າງ Prompt ສຳລັບສັ່ງງານ AI (Codex, Cursor, Claude Code)
 
-ພິມຄຳສັ່ງນີ້ໃນ AI Agent ຂອງທ່ານ ພ້ອມກັບແນບຮູບ Screenshot ຫຼື Figma:
-
 ```text
 Use the $screenshot-to-code skill.
-Implement or adjust the [ຊື່ໜ້າຈໍ ເຊັ່ນ CheckoutScreen / ProfileView] based on the attached screenshot/Figma.
+Implement or adjust the [ຊື່ໜ້າຈໍ ເຊັ່ນ WalletScreen / CheckoutView] based on the attached screenshot/Figma.
 
 Requirements:
 - Auto-detect and strictly adhere to the project's existing framework and styling conventions.
-- Match layout, typography, colors, borders, and spacing from the reference.
-- Inspect and reuse existing design system components and theme tokens.
-- Do NOT install unauthorized packages.
-- Modify only the required files.
+- Align with existing design system components, theme tokens, and data contracts.
+- Respect platform touch target standards (48dp for Android, 44pt for iOS).
+- Do NOT install unauthorized packages or invent synthetic mock data.
+- Modify only the required files and record cross-platform parity notes if applicable.
 - Run typecheck/build if possible, or report NOT RUN with reason.
 - Provide a summary of files modified, reused tokens, and any visual discrepancies.
 ```
