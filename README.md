@@ -1,5 +1,8 @@
 # screenshot-to-code Skill 🌐🎨📱💻
 
+[![Validate Skill & Scripts](https://github.com/tavanhvannala677-beep/skills-screenshot-to-code-tawan/actions/workflows/ci.yml/badge.svg)](https://github.com/tavanhvannala677-beep/skills-screenshot-to-code-tawan/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
 [English](#english) | [ພາສາລາວ](#ພາສາລາວ)
 
 ---
@@ -27,6 +30,14 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screenshot-to-code-tawan/main/install.sh | bash -s -- --local
 ```
 
+#### 3. Installer CLI Options
+The bundled installer script supports helpful flags:
+```bash
+./install.sh --help      # Show help menu and usage examples
+./install.sh --check     # Check if skill is installed globally or locally
+./install.sh --version   # Display installer version
+```
+
 ### 🛡️ Non-Negotiable Guardrails (Zero Loopholes)
 
 1. **Zero Unauthorized Dependencies**: The AI must NEVER run `npm install`, `pub add`, or add third-party dependencies to Gradle, Cocoapods, SPM, or ohpm without explicit user permission.
@@ -47,10 +58,15 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 flowchart TD
     A["Phase 1: Stack & Parity Reconnaissance\n(Detect Platform, Tokens, Contracts)"] --> B["Phase 2: Visual Deconstruction\n(Grid, Hierarchy, Typography, Surfaces)"]
     B --> C["Phase 3: Minimal Surgical Plan\n(Identify targets, fixtures & reused tokens)"]
-    C --> D["Phase 4: Implementation\n(Token-first, Platform targets: 48dp/44pt)"]
+    C --> D["Phase 4: Implementation\n(Token-first, Platform targets: 48dp/44pt/48vp)"]
     D --> E["Phase 5: Verification & Diff Audit\n(Compile/Build & git diff check)"]
     E --> F["Phase 6: Final Verification Report\n(Report files, tokens, parity notes & deviations)"]
 ```
+
+### 🧩 Developer Tooling & Templates
+
+- **Validation Suite**: Run `./scripts/validate-skill.sh` to verify frontmatter, guardrails, touch targets, and file synchronization.
+- **Cross-Platform Parity Template**: Use [`templates/parity-record-template.md`](./templates/parity-record-template.md) to record shared API contracts, visual states, and build audit sign-offs across platforms.
 
 ### 🚀 Usage in AI Agents (Prompt Template)
 
@@ -63,7 +79,7 @@ Implement or adjust the [Target Screen Name, e.g. WalletScreen / CheckoutView] b
 Requirements:
 - Auto-detect and strictly adhere to the project's existing framework and styling conventions.
 - Align with existing design system components, theme tokens, and data contracts.
-- Respect platform touch target standards (48dp for Android, 44pt for iOS).
+- Respect platform touch target standards (48dp Android, 44pt iOS, 48vp HarmonyOS).
 - Do NOT install unauthorized packages or invent synthetic mock data.
 - Modify only the required files and record cross-platform parity notes if applicable.
 - Run typecheck/build if possible, or report NOT RUN with reason.
@@ -95,6 +111,14 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screenshot-to-code-tawan/main/install.sh | bash -s -- --local
 ```
 
+#### 3. ຕົວເລືອກຄຳສັ່ງ Installer CLI
+ໄຟລ໌ `install.sh` ຮອງຮັບ Flags ທີ່ເປັນປະໂຫຍດ:
+```bash
+./install.sh --help      # ສະແດງເມນູຊ່ວຍເຫຼືອ ແລະ ຕົວຢ່າງການໃຊ້ງານ
+./install.sh --check     # ກວດສອບວ່າສະກິວຖືກຕິດຕັ້ງໄວ້ແລ້ວຫຼືບໍ່
+./install.sh --version   # ສະແດງເວີຊັນຂອງ Installer
+```
+
 ### 🛡️ ປິດທຸກຊ່ອງວ່າງດ້ວຍກົດເຫຼັກ (Non-Negotiable Guardrails)
 
 1. **ຫ້າມລົງ Package ເອງ (Zero Unauthorized Dependencies)**: ຫ້າມບໍ່ໃຫ້ AI ແອບລັນ `npm install`, `pub add`, ຫຼື ເພີ່ມ dependency ໃນ Gradle, Cocoapods, SPM, ohpm ເດັດຂາດໂດຍບໍ່ໄດ້ຮັບອະນຸຍາດ.
@@ -114,9 +138,14 @@ curl -fsSL https://raw.githubusercontent.com/tavanhvannala677-beep/skills-screen
 1. **Phase 1: ສຳຫຼວດ Platform, Stack ແລະ Contract**: ກວດສອບ Platform (Compose/SwiftUI/ArkTS), Styling, Tokens, Component Library ແລະ API Contracts.
 2. **Phase 2: ວິເຄາະຮູບພາບອ້າງອິງ**: ແຍກໂຄງສ້າງ Layout, Grid, Typography, ສີ ແລະ Interactive Components.
 3. **Phase 3: ວາງແຜນແບບເຈາະຈົງ**: ກຳນົດໄຟລ໌ທີ່ຕ້ອງແກ້ໄຂ, Fixtures ຂໍ້ມູນ ແລະ Components ທີ່ຕ້ອງດຶງມາໃຊ້ຄືນ.
-4. **Phase 4: ລົງມືຂຽນໂຄ້ດ**: ປະກອບ Layout ດ້ວຍ Semantic Containers, ໃຊ້ Theme Tokens ແລະ ໃຊ້ Touch Target ຖືກຕາມ Platform (48dp/44pt).
+4. **Phase 4: ລົງມືຂຽນໂຄ້ດ**: ປະກອບ Layout ດ້ວຍ Semantic Containers, ໃຊ້ Theme Tokens ແລະ ໃຊ້ Touch Target ຖືກຕາມ Platform (48dp/44pt/48vp).
 5. **Phase 5: ກວດສອບ Build ແລະ Git Diff**: ລັນ Typecheck/Build ຕາມ Platform ແລະ ກວດສອບ `git diff` ເພື່ອຢືນຢັນວ່າບໍ່ມີໄຟລ໌ອື່ນຖືກກະທົບ.
 6. **Phase 6: ລາຍງານຜົນສະຫຼຸບ**: ສະຫຼຸບໄຟລ໌ທີ່ປ່ຽນແປງ, Tokens ທີ່ນຳໃຊ້, ຂໍ້ສັງເກດ Parity ຂ້າມ Platform, ແລະ ຜົນການ Build/Test ຕົວຈິງ.
+
+### 🧩 ເຄື່ອງມືຊ່ວຍພັດທະນາ (Developer Tooling)
+
+- **ລະບົບກວດສອບອັດຕະໂນມັດ**: ລັນ `./scripts/validate-skill.sh` ເພື່ອກວດສອບຄວາມຖືກຕ້ອງຂອງ Frontmatter, Guardrails, Touch Targets ແລະ ຄວາມກົງກັນຂອງໄຟລ໌.
+- **ແບບຟອມບັນທຶກ Parity ຂ້າມ Platform**: ນຳໃຊ້ [`templates/parity-record-template.md`](./templates/parity-record-template.md) ເພື່ອບັນທຶກ Shared API Contract, UI States, ແລະ ການກວດສອບ Build ໃນແຕ່ລະ Platform.
 
 ### 🚀 ຕົວຢ່າງ Prompt ສຳລັບສັ່ງງານ AI (Codex, Cursor, Claude Code)
 
@@ -127,7 +156,7 @@ Implement or adjust the [ຊື່ໜ້າຈໍ ເຊັ່ນ WalletScreen /
 Requirements:
 - Auto-detect and strictly adhere to the project's existing framework and styling conventions.
 - Align with existing design system components, theme tokens, and data contracts.
-- Respect platform touch target standards (48dp for Android, 44pt for iOS).
+- Respect platform touch target standards (48dp Android, 44pt iOS, 48vp HarmonyOS).
 - Do NOT install unauthorized packages or invent synthetic mock data.
 - Modify only the required files and record cross-platform parity notes if applicable.
 - Run typecheck/build if possible, or report NOT RUN with reason.
