@@ -1,0 +1,39 @@
+name: Validate Skill & Scripts
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Lint & Validate Skill Integrity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Shell Script Syntax
+        run: |
+          echo "Checking shell scripts syntax..."
+          bash -n install.sh
+          bash -n scripts/validate-skill.sh
+
+      - name: Ensure Executable Permissions
+        run: |
+          chmod +x install.sh
+          chmod +x scripts/validate-skill.sh
+
+      - name: Run Skill Validation Suite
+        run: |
+          ./scripts/validate-skill.sh
+
+      - name: Test Installer CLI Flags
+        run: |
+          echo "Testing installer options..."
+          ./install.sh --version
+          ./install.sh --help
+          ./install.sh --check
